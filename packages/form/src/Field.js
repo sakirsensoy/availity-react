@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, FormText, Input as RsInput, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
+import { Col, FormText, Input as RsInput, InputGroup, InputGroupText } from 'reactstrap';
 import { v4 as uuid } from 'uuid';
 
 import Feedback from './Feedback';
@@ -64,17 +64,9 @@ const Field = ({
   if (prepend || append) {
     input = (
       <InputGroup>
-        {prepend && (
-          <InputGroupAddon addonType="prepend">
-            {typeof prepend === 'string' ? <InputGroupText>{prepend}</InputGroupText> : prepend}
-          </InputGroupAddon>
-        )}
+        {prepend && (typeof prepend === 'string' ? <InputGroupText>{prepend}</InputGroupText> : prepend)}
         {input}
-        {append && (
-          <InputGroupAddon addonType="append">
-            {typeof append === 'string' ? <InputGroupText>{append}</InputGroupText> : append}
-          </InputGroupAddon>
-        )}
+        {append && (typeof append === 'string' ? <InputGroupText>{append}</InputGroupText> : append)}
         <Feedback name={id} />
       </InputGroup>
     );
